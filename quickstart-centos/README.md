@@ -48,10 +48,6 @@ $ docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
 
 ```
 
-## Authors
-
-* Toshiki Inami (<t-inami@arukas.io>)
-
 ## License
 
 This project is licensed under the terms of the MIT license.

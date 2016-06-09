@@ -29,9 +29,6 @@ $ docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
                                         --mem=512 \
                                         --ports=80:tcp arukasio/quickstart-python
 ```
-## Authors
-
-* Toshiki Inami (<t-inami@arukas.io>)
 
 ## License
 
