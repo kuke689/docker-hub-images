@@ -69,3 +69,8 @@ Commands:
   version
     Print version information and quit
 ```
+
+
+## License
+
+This project is licensed under the terms of the MIT license.
