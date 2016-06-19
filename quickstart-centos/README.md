@@ -30,13 +30,11 @@ or If you have docker installed already,
 
 ##### Public key authentication
 ```
-$ docker run --rm \
-      -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
-      -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
-          arukasio/arukas run --instances=1 \
-              --mem=512 \
-              --envs AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" \
-              --ports=22:tcp arukasio/quickstart-centos
+$ docker run \
+    --rm \
+    -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
+    -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
+    arukasio/arukas run --instances=1 --mem=512 --envs AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" --ports=22:tcp arukasio/quickstart-centos
 
 ```
 ##### username/password
@@ -51,16 +49,11 @@ wTfNAWqBH3nQw3UQ8+Iu2wW7wdez+hvajuW4R+SD81xbmBpopT+uEYiBhHbgTpl0
 
 
 ```
-$ docker run --rm \
-      -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
-      -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
-           arukasio/arukas run \
-               --instances=1 \
-               --mem=512 \
-               --ports=22:tcp \
-                   arukasio/quickstart-centos \
-                       -e ROOT_PWD=$YOUR_PWD
-
+$ docker run \
+    --rm \
+    -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
+    -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
+    arukasio/arukas run --instances=1 --mem=512 --ports=22:tcp arukasio/quickstart-centos -e ROOT_PWD=$YOUR_PWD
 ```
 
 ## License
