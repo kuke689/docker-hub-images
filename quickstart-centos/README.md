@@ -30,21 +30,36 @@ or If you have docker installed already,
 
 ##### Public key authentication
 ```
-$ docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
-                  -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
-                    arukasio/arukas run --instances=1 \
-                                        --mem=512 \
-                                        --envs AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" \
-                                        --ports=22:tcp arukasio/quickstart-centos
+$ docker run --rm \
+      -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
+      -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
+          arukasio/arukas run --instances=1 \
+              --mem=512 \
+              --envs AUTHORIZED_KEY="`cat ~/.ssh/id_rsa.pub`" \
+              --ports=22:tcp arukasio/quickstart-centos
 
 ```
 ##### username/password
+For demonstration purpose, we’ll create a strong random password in here.
+(We strongly recommend your to use a strong password in order to protect your application from crackers and other malicious attacks.)
+
 ```
-$ docker run --rm -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
-                  -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
-                    arukasio/arukas run --instances=1 \
-                                        --mem=512 \
-                                        --ports=22:tcp arukasio/quickstart-centos
+$ YOUR_PWD=$(openssl rand -base64 48)
+$ echo $YOUR_PWD
+wTfNAWqBH3nQw3UQ8+Iu2wW7wdez+hvajuW4R+SD81xbmBpopT+uEYiBhHbgTpl0
+```
+
+
+```
+$ docker run --rm \
+      -e ARUKAS_JSON_API_TOKEN=<APIT_TOKEN> \
+      -e ARUKAS_JSON_API_SECRET=<SECRET_KEY> \
+           arukasio/arukas run \
+               --instances=1 \
+               --mem=512 \
+               --ports=22:tcp \
+                   arukasio/quickstart-centos \
+                       -e ROOT_PWD=$YOUR_PWD
 
 ```
 
