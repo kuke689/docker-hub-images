@@ -4,19 +4,17 @@ FROM python:2.7-slim
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
 # Set the applilcation directory
-ENV APP_HOME /app
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+WORKDIR /app
 
 # Get pip to download and install requirements:
-COPY requirements.txt $APP_HOME/
+COPY requirements.txt /app
 RUN pip install -r requirements.txt
 
 # Copy our code from the current folder to /app inside the container
-COPY . $APP_HOME
+COPY . /app
 
 # Make port 5000 available for publish
 EXPOSE 80
 
 # Start server
-CMD python $APP_HOME/server.py
+CMD python /app/server.py

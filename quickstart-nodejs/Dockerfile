@@ -4,16 +4,14 @@ FROM node:argon
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
 # Set the applilcation directory
-ENV APP_HOME /app
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+WORKDIR /app
 
 # Install app dependencies
-COPY package.json $APP_HOME/
+COPY package.json /app
 RUN npm install
 
 # Copy our code from the current folder to /app inside the container
-COPY . $APP_HOME
+COPY . /app
 
 # Make port 3000 available for publish
 EXPOSE 3000

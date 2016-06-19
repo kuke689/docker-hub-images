@@ -16,16 +16,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Set the applilcation directory
-ENV APP_HOME /app
-RUN mkdir $APP_HOME
-WORKDIR $APP_HOME
+WORKDIR /app
 
 # Install gems
-COPY Gemfile $APP_HOME/
-RUN bundle install --jobs=4
+COPY Gemfile /app
+RUN bundle install
 
 # Copy our code from the current folder to /app inside the container
-COPY . $APP_HOME
+COPY . /app
 
 # Make port 4657 available for publish
 EXPOSE 4567
