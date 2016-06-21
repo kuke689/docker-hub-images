@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 # Install Slim framework
 WORKDIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    composer require slim/slim ^$SLIM_VERION && \
+    composer require slim/slim "^${SLIM_VERSION}" && \
     rm -rf /usr/local/bin/composer
 
 # Enable mod_rewrite for apache2.2
