@@ -7,7 +7,6 @@ ENV SLIM_VERSION "3.4.0"
 
 # Install curl, git and supervisor, and then clean up
 RUN apt-get update && apt-get install -y \
-      curl \
       git \
       supervisor \
     && rm -rf /var/lib/apt/lists/*
