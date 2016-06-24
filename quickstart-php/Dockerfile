@@ -3,11 +3,10 @@ FROM php:5.6-apache
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
 
-ENV SLIM_VERSION "^3.4.0"
+ENV SLIM_VERSION "3.4.0"
 
 # Install curl, git and supervisor, and then clean up
 RUN apt-get update && apt-get install -y \
-      curl \
       git \
       supervisor \
     && rm -rf /var/lib/apt/lists/*
@@ -15,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 # Install Slim framework
 WORKDIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
-    composer require slim/slim $SLIM_VERION && \
+    composer require slim/slim "^${SLIM_VERSION}" && \
     rm -rf /usr/local/bin/composer
 
 # Enable mod_rewrite for apache2.2

@@ -17,7 +17,6 @@ RUN mkdir -p /var/run/sshd
 
 # Make start.sh excutable
 COPY start.sh /start.sh
-RUN chmod +x /start.sh
 
 # Configure sshd.conf
 ## For username/password login
