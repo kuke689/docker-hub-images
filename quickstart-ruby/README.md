@@ -5,7 +5,7 @@ A simple Ruby app ( using Sinatra: a DSL for quickly creating web applications i
 
 ```
 $ git clone git@github.com:arukasio/docker-hub-images.git
-$ cd docker-hub-image/quickstart-ruby
+$ cd docker-hub-images/quickstart-ruby
 $ docker build --no-cache --tag quickstart-ruby .
 $ docker run -rm -d -p 4567:4567 quickstart-ruby
 ```
