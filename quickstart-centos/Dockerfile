@@ -1,4 +1,3 @@
-# Using official ubuntu runtime base image
 FROM centos:centos7
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"

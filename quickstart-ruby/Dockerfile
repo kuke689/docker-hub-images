@@ -1,4 +1,3 @@
-# Using official Ruby runtime base image
 FROM ruby:2.3.1-slim
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"

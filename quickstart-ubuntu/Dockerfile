@@ -1,4 +1,3 @@
-# Using official ubuntu base image
 FROM ubuntu:trusty
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"

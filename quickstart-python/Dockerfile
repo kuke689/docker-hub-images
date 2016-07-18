@@ -1,4 +1,3 @@
-# Using official Python runtime base image
 FROM python:2.7-slim
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"

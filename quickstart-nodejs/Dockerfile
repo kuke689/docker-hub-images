@@ -1,4 +1,3 @@
-# Using official php runtime base image
 FROM node:argon
 
 MAINTAINER "Toshiki Inami <t-inami@arukas.io>"
